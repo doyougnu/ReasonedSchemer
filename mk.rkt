@@ -48,3 +48,17 @@
 ;; actual code
 
 (include "mk.scm")
+
+; Define #s.
+(current-readtable
+ (make-readtable (current-readtable)
+                 #\s
+                 'dispatch-macro
+                 (lambda (a b c d e f) succeed)))
+
+; Define #u.
+(current-readtable
+ (make-readtable (current-readtable)
+                 #\u
+                 'dispatch-macro
+                 (lambda (a b c d e f) fail)))

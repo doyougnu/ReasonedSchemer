@@ -1,6 +1,7 @@
 #lang racket
 
 (require "mk.rkt" "utils.rkt")
+(provide caro cdro nullo conso pairo)
 ;; (test-case "7"
 ;;   (check-match
 ;;    (run* (r)
@@ -42,15 +43,6 @@
     (fresh (x y)
      (== x (conso x y r)))))
 
-(define listo
-  (lambda (l)
-    (conde
-     [(nullo l) succeed]
-     [(pairo l)
-      (fresh (d)
-             (cdro l d)
-             (listo d))]
-     [succeed fail])))
-
+;;;;;;;;;;;;;; checks ;;;;;;;;;;;;;;;;
 (check 6 (run* (r) (caro `(a c o r n) r)) '(a))
 (check 7 (run* (r) (caro `(a c o r n) 'a) (== #t r)) '(#t))
