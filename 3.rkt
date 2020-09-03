@@ -17,5 +17,5 @@
 
 
 (check 7 (run* (x) (listo `('a 'b ,x 'd))) '(_.0))
-
-(check 10 (run 1 (x) (listo `('a 'b 'c . ,x))) '(('a)))
+(check 10 (run 1 (x) (listo `('a 'b 'c . ,x))) '(()))
+(explicate 14 (run 5 (x) (listo `('a 'b 'c . ,x))) "we are asking for 5 results")
