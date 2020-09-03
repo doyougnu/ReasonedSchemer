@@ -2,6 +2,7 @@
 #lang racket
 
 (require "mk.rkt" "utils.rkt" "2.rkt")
+(module+ test (require "mk.rkt" "2.rkt"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; code ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define listo
@@ -13,3 +14,8 @@
              (cdro l d)
              (listo d))]
      [succeed fail])))
+
+
+(check 7 (run* (x) (listo `('a 'b ,x 'd))) '(_.0))
+
+(check 10 (run 1 (x) (listo `('a 'b 'c . ,x))) '(('a)))
