@@ -15,6 +15,22 @@
 
 ;;;;;;;;;;;;;; code ;;;;;;;;;;;;;;;;
 ;; extra stuff for racket
+; Define #s.
+(current-readtable
+ (make-readtable (current-readtable)
+                 #\s
+                 'dispatch-macro
+                 (lambda (a b c d e f) succeed)))
+
+; Define #u.
+(current-readtable
+ (make-readtable (current-readtable)
+                 #\u
+                 'dispatch-macro
+                 (lambda (a b c d e f) fail)))
+
+
+
 ;; due mostly to samth
 (define (list-sort f l) (sort l f))
 (define (remp f l) (filter-not f l))

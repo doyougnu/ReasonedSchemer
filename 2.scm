@@ -1,16 +1,5 @@
-#lang racket
+(load "miniKanren-with-symbolic-constraints/mk.scm")
 
-(require "mk.rkt" "utils.rkt")
-;; (test-case "7"
-;;   (check-match
-;;    (run* (r)
-;;          (caro `(a c o r n) 'a)
-;;          (== #t r))
-;;    '(#t)))
-
-
-
-;;;;;;;;;;;;;; code ;;;;;;;;;;;;;;;;
 (define caro
   (lambda (p a)
     (fresh (d)
@@ -40,7 +29,7 @@
 (define pairo
   (lambda (r)
     (fresh (x y)
-     (== x (conso x y r)))))
+           (== x (conso x y r)))))
 
 (define listo
   (lambda (l)
@@ -52,5 +41,7 @@
              (listo d))]
      [succeed fail])))
 
-(check 6 (run* (r) (caro `(a c o r n) r)) '(a))
-(check 7 (run* (r) (caro `(a c o r n) 'a) (== #t r)) '(#t))
+(run* (r) (caro `('a 'c 'o 'r 'n) r))
+
+
+(run* (r) (caro `('a 'c 'o 'r 'n) 'a) (== #t r))

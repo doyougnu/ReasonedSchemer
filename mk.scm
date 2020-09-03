@@ -38,7 +38,7 @@
     ((_ (c : B E S D Y N T) e)
      (lambda (c)
        (let ((B (c->B c)) (E (c->E c)) (S (c->S c)) (D (c->D c))
-       (Y (c->Y c)) (N (c->N c)) (T (c->T c)))
+	     (Y (c->Y c)) (N (c->N c)) (T (c->T c)))
          e)))))
 
 (define rhs
@@ -382,7 +382,7 @@
     (let ((const? (lambda (y)
                     (not (var? (walk y S))))))
       (cond
-  ((find const? Y) =>
+	((find const? Y) =>
          (lambda (y) `(,B ,E ,S ,D ,(remq1 y Y) ,N ,T)))
         (else c)))))
 
@@ -576,9 +576,9 @@
     (lambda (D)
       (find
        (lambda (d)
-   (exists (lambda (pr)
-       (term-ununifiable? S Y N (lhs pr) (rhs pr)))
-     d))
+	 (exists (lambda (pr)
+		   (term-ununifiable? S Y N (lhs pr) (rhs pr)))
+		 d))
        D))))
 
 (define drop-D-b/c-Y-or-N
@@ -731,7 +731,7 @@
     (lambda (d)
       (cond
         ((unify* d S) =>
-   (lambda (S+) (eq? S+ S)))
+	 (lambda (S+) (eq? S+ S)))
         (else #f)))))
 
 (define reify
