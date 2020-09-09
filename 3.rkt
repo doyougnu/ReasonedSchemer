@@ -4,6 +4,16 @@
 (require "mk.rkt" "utils.rkt" "2.rkt")
 (module+ test (require "mk.rkt" "2.rkt"))
 
+(provide listo
+         lolo
+         twinso
+         loto
+         listofo
+         eq-caro
+         membero
+         pmembero
+         memberrevo)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; code ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define listo
   (lambda (l)

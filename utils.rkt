@@ -16,7 +16,7 @@
        #'(module+ test
            (let* ([test-passed (equal? question answer)]
                   [result-message (if test-passed "Passed" "Failed")])
-             (printf  "~a ===> ~s with: ~s~n~n" id message))))]))
+             (printf  "~a ===> ~s with message: ~s~n~n" id result-message message))))]))
 
 (define-syntax (explicate stx)
   (syntax-case stx ()
