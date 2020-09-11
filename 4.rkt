@@ -5,7 +5,7 @@
 (module+ test (require "lib.rkt"))
 
 (provide memo
-         )
+         rembero)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; code ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define eq-car?
