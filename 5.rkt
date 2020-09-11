@@ -7,6 +7,8 @@
 (provide appendo
          swappendo
          unwrap
+         flatteno
+         flattenrevo
          )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; code ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
