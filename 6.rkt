@@ -4,8 +4,9 @@
 (require "lib.rkt" "5.rkt")
 (module+ test (require "lib.rkt"))
 
-(provide
-         )
+(provide anyo
+         nevero
+         salo)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; code ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (define anyo
